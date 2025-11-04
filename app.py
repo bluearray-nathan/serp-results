@@ -32,7 +32,7 @@ st.markdown(
     • Returns the top <b>10 organic “blue link” results</b> per keyword — <b>no AI Overviews</b>, featured snippets, ads, or other SERP features.<br>
     • Default quota: <b>10,000 queries/day</b> (requires billing; otherwise ~100/day).<br>
     • Each query counts once per keyword (cached results don’t use extra quota).<br>
-    • Useful for rank tracking, keyword research, and SEO monitoring.
+    • Useful for keyword research & onitoring.
     </div>
     """,
     unsafe_allow_html=True,
