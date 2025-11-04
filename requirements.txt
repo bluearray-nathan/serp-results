@@ -1,0 +1,4 @@
+streamlit>=1.38
+pandas>=2.1
+requests>=2.31
+diskcache>=5.6
