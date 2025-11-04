@@ -30,7 +30,7 @@ st.markdown(
     <b>ℹ️ About this tool:</b><br>
     • Uses the <a href="https://developers.google.com/custom-search/v1/overview" target="_blank">Google Programmable Search JSON API</a>.<br>
     • Returns the top <b>10 organic “blue link” results</b> per keyword — <b>no AI Overviews</b>, featured snippets, ads, or other SERP features.<br>
-    • Default quota: <b>10,000 queries/day</b> (requires billing; otherwise ~100/day).<br>
+    • Default quota: <b>10,000 queries/day</b>.
     • Each query counts once per keyword (cached results don’t use extra quota).<br>
     • Useful for keyword research & onitoring.
     </div>
