@@ -23,6 +23,21 @@ PER_REQUEST_DELAY = 0.0
 # ============================================================
 st.set_page_config(page_title="Top 10 SERP Results by Keyword (Google)", layout="wide")
 st.title("🔍 Top 10 SERP Results by Keyword (Google)")
+
+st.markdown(
+    """
+    <div style="background-color:#f0f2f6;padding:12px 16px;border-radius:10px;margin-bottom:16px;">
+    <b>ℹ️ About this tool:</b><br>
+    • Uses the <a href="https://developers.google.com/custom-search/v1/overview" target="_blank">Google Programmable Search JSON API</a>.<br>
+    • Returns the top <b>10 organic “blue link” results</b> per keyword — <b>no AI Overviews</b>, featured snippets, ads, or other SERP features.<br>
+    • Default quota: <b>10,000 queries/day</b> (requires billing; otherwise ~100/day).<br>
+    • Each query counts once per keyword (cached results don’t use extra quota).<br>
+    • Useful for rank tracking, keyword research, and SEO monitoring.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.caption("Upload a CSV of keywords, fetch top 10 URLs (and optional titles) via Google Programmable Search API, with caching & resume.")
 
 # ============================================================
@@ -101,7 +116,8 @@ def load_keywords_from_csv(file_bytes: bytes) -> list[str]:
     seen, out = set(), []
     for k in kws:
         if k and k not in seen:
-            seen.add(k); out.append(k)
+            seen.add(k)
+            out.append(k)
     return out
 
 def params(q, api_key, cx, gl, hl, num_results, include_titles: bool):
@@ -262,5 +278,6 @@ if st.download_button("⬇️ Download CSV", csv_bytes, OUTPUT_CSV, "text/csv"):
         pass
 
 st.dataframe(df, use_container_width=True)
+
 
 
